@@ -28,4 +28,9 @@ document.addEventListener("keypress", (key) => {
     playSound(keyvalue);
     
 });
+document.getElementById("vasu").addEventListener('click',()=>{
+    const au= new Audio('piano/vasu_audio (1).mp4');
+    au.play();
+})
+
 
