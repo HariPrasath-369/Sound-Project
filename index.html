@@ -1,46 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Piano</title>
-<link rel="stylesheet" href="sound.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Piano</title>
+    <link rel="stylesheet" href="sound.css" />
+  </head>
 
-<body>
 
-<div class="piano">
+  <body>
+    <div class="container">
 
-  <div >
-  <button class="white" id="a">a</button>
-  <button class="white" id="b">b</button>
-  <button class="white" id="c">c</button>
-  <button class="white" id="d">d</button>
-  <button class="white" id="e">e</button>
-  <button class="white" id="f">f</button>
-  <button class="white" id="g">g</button>
-  <button class="white" id="h">h</button>
-  <button class="white" id="i">i</button>
-  <button class="white" id="j">j</button>
-  <button class="white" id="k">k</button>
-  </div>
-
-  <div class="blackdiv">
-  <button class="black" id="A">A#</button>
-  <button class="black" id="B">B#</button>
-  <button class="black" id="C">C#</button>
-  <button class="black" id="D">D#</button>
-  <button class="black" id="E">E#</button>
-  <button class="black" id="F">F#</button>
-  <button class="black" id="G">G#</button>
-  <button class="black" id="H">H#</button>
-  </div>
-  
-  <div>
-    <button id="vasu" class="vasuclass" >VASU</button>
-  </div>
+      <div class="songs">
+        <h3 class="h3tag">Select a song to play</h3>
+    <button class="songBtn" data-song="a s d f g f d s a">Basic Scale</button>
+    <button class="songBtn" data-song="a a g g h h g">Twinkle Start</button>
+    <button class="songBtn" data-song="a d f g h g f d a">Melody 1</button>
 </div>
 
-<script src="sound.js"></script>
-</body>
+<div id="trainerDisplay"></div>
+
+
+<div id="data-container"></div>
+
+        <div id="data-container">
+
+        </div>
+      <div class="recordoptions">
+        <button onclick="startRec()">Start Rec</button>
+        <button onclick="stopRec()">Stop Rec</button>
+        <button onclick="downloadRec()">Download</button>
+        <audio id="player" controls></audio>
+         <div class="clockvalues" >
+                <h1 id="minute">00</h1>
+                <h1 >:</h1>
+                <h1 id="second">00</h1>
+                <h1>.</h1>
+                <h1 id="millisec">00</h1>
+            </div>
+      </div>
+
+      <div class="piano">
+        <div class="white-keys">
+          <button class="white" id="a">A</button>
+          <button class="white" id="b">B</button>
+          <button class="white" id="c">C</button>
+          <button class="white" id="d">D</button>
+          <button class="white" id="e">E</button>
+          <button class="white" id="f">F</button>
+          <button class="white" id="g">G</button>
+          <button class="white" id="h">H</button>
+          <button class="white" id="i">I</button>
+          <button class="white" id="j">J</button>
+          <button class="white" id="k">K</button>
+        </div>
+
+        <div class="black-keys">
+          <button class="black" id="a-sharp">A#</button>
+          <button class="black" id="b-sharp">B#</button>
+          <button class="black" id="c-sharp">C#</button>
+          <button class="black" id="d-sharp">D#</button>
+          <button class="black" id="e-sharp">E#</button>
+          <button class="black" id="f-sharp">F#</button>
+          <button class="black" id="g-sharp">G#</button>
+          <button class="black" id="h-sharp">H#</button>
+        </div>
+      </div>
+
+      <button id="vasu" class="vasuclass">VASU</button>
+
+      <h4 id="text"></h4>
+    </div>
+
+    
+
+    <script src="sound.js"></script>
+  </body>
 </html>

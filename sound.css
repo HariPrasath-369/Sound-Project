@@ -1,35 +1,202 @@
-*{
-    background-color: bisque;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(182, 160, 134);
+    background: linear-gradient(135deg,black,rgb(240, 237, 237));
+    font-family: Arial, sans-serif;
 }
-body{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    margin:0;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
-.white{
-    background-color: white;
-    color:black;
-    border:1px solid black;
-    border-radius:0 0 6px 6px;
-    font-size:18px;
+
+.recordoptions {
+    display: flex;
+    gap: 10px;
     padding: 20px;
-    margin: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    margin-bottom: 10px;
 }
-.black{
+
+.recordoptions button {
+    padding: 12px 24px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recordoptions button:hover {
+    background-color: #34495e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.recordoptions button:active {
+    transform: translateY(0);
+}
+
+#player {
+    margin-left: 10px;
+    height: 40px;
+}
+.piano {
+    position: relative;
+    padding: 30px 20px 20px 20px;
+    background: #8b5a5a;
+    border-radius: 15px 15px 30px 30px;
+    box-shadow: 0 20px 20px rgba(0,0,0,0.3), inset 0 -5px 0 #5d3e3e;
+}
+
+/* WHITE KEYS */
+.white-keys {
+    display: flex;
+    position: relative;
+    z-index: 1;
+}
+
+.white {
+    width: 70px;
+    height: 260px;
+    background: linear-gradient(to bottom, #fff, #eee);
+    border: 1px solid #999;
+    border-radius: 0 0 8px 8px;
+    margin-right: 2px;
+    position: relative;
+    justify-content: flex-end;
     
-    background-color: rgb(14, 14, 14);
-    color:aliceblue;
-    border:1px solid black;
-    border-radius:0 0 6px 6px;
-    font-size:18px;
-    padding: 20px;
-    margin: 10px;
 }
-.blackdiv{
-    padding-left: 40px;
+.white::after,
+.black::after{
+    position:absolute;
+    bottom:10px;
+    left:50%;
+    transform:translateX(-50%);
+}
+.white, .black{
+    display:flex;
+    align-items:flex-end;   
+    justify-content:center;
+    padding-bottom:12px;    
+    font-weight:bold;
 }
 
 
+.black-keys {
+    position: absolute;
+    top: 30px;          
+    left: 55px;         
+    display: flex;
+    z-index: 2;
+}
+
+.black {
+    width: 45px;
+    height: 160px;
+    background: linear-gradient(145deg,#2c3e50,#111);
+    border-radius: 0 0 6px 6px;
+    margin-right: 27px; 
+    color: #eee;
+    justify-content: center;
+}
+
+
+.black:nth-child(1) { margin-left: 25px; }  
+.black:nth-child(2) { margin-left: 5px; }   
+.black:nth-child(3) { margin-left: 5px; } 
+.black:nth-child(4) { margin-left: 5px; }   
+.black:nth-child(5) { margin-left: 5px; }   
+.black:nth-child(6) { margin-left: 5px; }   
+.black:nth-child(7) { margin-left: 5px; }  
+.black:nth-child(8) { margin-left: 5px; }   
+
+.black:hover {
+    background: linear-gradient(145deg, #34495e, #1f3145);
+}
+
+.black:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #0f1a24, 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.vasuclass {
+    margin-top: 30px;
+    padding: 15px 40px;
+    background: linear-gradient(145deg, #4a90e2, #357abd);
+    border: none;
+    border-radius: 50px;
+  
+}
+.h3tag{
+    color: #ff0c0c;
+   
+}
+
+
+#text {
+    text-align: center;
+    margin-top: 20px;
+    color: #5d3e3e;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@media (max-width: 900px) {
+    .white {
+        width: 50px;
+        height: 200px;
+        font-size: 14px;
+    }
+    
+    .black {
+        width: 32px;
+        height: 120px;
+        font-size: 12px;
+    }
+    
+    .black:nth-child(1) { margin-left: 15px; }
+}
+
+.songs{
+    display:flex;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.songBtn{
+    padding:10px 16px;
+    background:#8e44ad;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+#trainerDisplay{
+    height:50px;
+    font-size:32px;
+    font-weight:bold;
+    color:#2c3e50;
+    letter-spacing:4px;
+}
+.clockvalues{
+    display: flex;
+}
